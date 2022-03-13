@@ -49,6 +49,3 @@ result_arr_sorted = sorted(result_arr, key=lambda tup: tup[2], reverse=True)
 
 result.write(json.dumps(result_arr_sorted))
 result.close()
-
-for r in result_arr_sorted:
-    print(r)
