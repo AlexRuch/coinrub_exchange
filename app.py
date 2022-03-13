@@ -20,6 +20,10 @@ requests.adapters.DEFAULT_RETRIES = 20  # increase retries number
 s = requests.session()
 s.keep_alive = False  # disable keep alive
 
+response_rub2usdt = s.get('https://api.binance.com/api/v3/trades', params={'symbol': 'USDTRUB', 'limit': '1'}).json()
+rub2usdt = input_rub / float(response_rub2usdt[0]['price'])
+print('RUB to USDT: ' + str(rub2usdt))
+
 for coin in coins_arr:
     rub2coin = coin + postfix_rub
     coin2usdt = coin + postfix_usdt
